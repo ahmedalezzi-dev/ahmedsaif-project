@@ -1,0 +1,117 @@
+/* General Styles */
+body {
+  font-family: Poppins, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-image: url('img/carolina-pimenta-hBsOq3RcndM-unsplash.jpg');
+  background-size: cover; 
+  background-position: center center;  
+  background-repeat: no-repeat;  
+  
+}
+
+/* Header */
+header {
+  background: #58788B;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+header .container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Navigation */
+nav ul {
+  background: #333;
+  color: white;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  overflow: hidden;
+}
+
+nav ul li {
+  float: left;
+  display: inline;
+  padding: 10px 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background: #007BFF;
+}
+
+/* Main Content */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+section h2 {
+  border-bottom: 2px solid #00ddce;
+  padding-bottom: 5px;
+}
+
+.model, .image-container {
+  margin: 10px 0;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  text-align: center; 
+}
+.metrics{
+  font-weight: 800;
+  text-align: center;
+  color: #515959;
+  font-size: 30px;
+
+}
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background: #333;
+  color: white;
+  margin-top: 20px;
+}
+.table-style {
+  display: grid;
+  grid-template-columns: 150px 100px 100px 100px;
+  gap: 10px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.table-style div {
+  padding: 5px;
+  text-align: center;
+}
+
+.table-style .header {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}

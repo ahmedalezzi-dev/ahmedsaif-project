@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Performance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Model Performance Dashboard</h1>
+            <p>Visualizing Machine Learning Models and Metrics for Air Quality and Pollution Assessment
+            </p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#dataset_Overview">Dataset Overview</a></li>
+            <li><a href="#models">Models</a></li>
+            <li><a href="#visualizations">Visualizations</a></li>
+            <li><a href="#metrics">Metrics</a></li>
+          
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+
+        </section>
+        <!-- Models Section -->
+        <section id="preprocessing">
+            <h2>Dataset Overview</h2>
+            <p>This dataset focuses on air quality assessment across various regions, capturing critical environmental and demographic factors that influence pollution levels.</p>
+            
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Temperature (°C):</strong> Average temperature of the region.</li>
+                <li><strong>Humidity (%):</strong> Relative humidity recorded in the region.</li>
+                <li><strong>PM2.5 Concentration (µg/m³):</strong> Fine particulate matter levels.</li>
+                <li><strong>PM10 Concentration (µg/m³):</strong> Coarse particulate matter levels.</li>
+                <li><strong>NO2 Concentration (ppb):</strong> Nitrogen dioxide levels.</li>
+                <li><strong>SO2 Concentration (ppb):</strong> Sulfur dioxide levels.</li>
+                <li><strong>CO Concentration (ppm):</strong> Carbon monoxide levels.</li>
+                <li><strong>Proximity to Industrial Areas (km):</strong> Distance to the nearest industrial zone.</li>
+                <li><strong>Population Density (people/km²):</strong> Number of people per square kilometer in the region.</li>
+            </ul>
+            
+            <h3>Target Variable:</h3>
+            <ul>
+                <li><strong>Good:</strong> Clean air with low pollution levels.</li>
+                <li><strong>Moderate:</strong> Acceptable air quality but with some pollutants present.</li>
+                <li><strong>Poor:</strong> Noticeable pollution that may cause health issues for sensitive groups.</li>
+                <li><strong>Hazardous:</strong> Highly polluted air posing serious health risks to the population.</li>
+            </ul>
+            <img src="img/download.png" alt="">
+            <h2>Data Preprocessing</h2>
+        
+            <h3>1. Feature Scaling (Standardization)</h3>
+            <p>To ensure that all features contribute equally to the model, we scaled the features using <strong>StandardScaler</strong>. This scaling technique transforms the features to have a mean of 0 and a standard deviation of 1. This is particularly important for algorithms like Logistic Regression and Support Vector Machines (SVM), which are sensitive to the scale of input features.</p>
+        
+            <h3>2. Target Variable Encoding (Label Encoding)</h3>
+            <p>The target variable, <strong>"Air Quality Levels"</strong>, was encoded using <strong>Label Encoding</strong>. The original categories, such as "Good," "Moderate," and "Poor," were mapped to unique numeric labels:</p>
+            <ul>
+                <li><strong>Good</strong> -> Class 0</li>
+                <li><strong>Moderate</strong> -> Class 1</li>
+                <li><strong>Poor</strong> -> Class 2</li>
+                <li><strong>Hazardous</strong> -> Class 3</li>
+            </ul>
+        
+            
+        </section>
+        
+        
+        <section id="models">
+            <h2>Models Overview</h2>
+            <div class="model">
+                <h3>Support Vector Machine (SVM)</h3>
+                <p><strong>Best Parameters:</strong> C=1, kernel='rbf'</p>
+                <p><strong>Best Score:</strong> 94.6%</p>
+            </div>
+            <div class="model">
+                <h3>Random Forest</h3>
+                <p><strong>Best Parameters:</strong> n_estimators=10</p>
+                <p><strong>Best Score:</strong> 99.4%</p>
+            </div>
+            <div class="model">
+                <h3>Logistic Regression</h3>
+                <p><strong>Best Parameters:</strong> C=5</p>
+                <p><strong>Best Score:</strong> 94.3%</p>
+            </div>
+        </section>
+        
+
+        <!-- Visualizations Section -->
+        <section id="visualizations">
+            <h2>Visualizations</h2>
+            <p>Confusion matrices and other plots are displayed below.</p>
+            <div class="image-container">
+                <img src="img/cm_svm.png" ">
+                <p>Confusion Matrix for SVM</p>
+            </div>
+            <div class="image-container">
+                <img src="img/cm_lr.png" ">
+                <p>Confusion Matrix for Logistic Regression</p>
+            </div>
+            <div class="image-container">
+                <img src="img/cm_rf.png" ">
+                <p>Confusion Matrix for Random Forest</p>
+            </div>
+        </section>
+
+        <!-- Metrics Section -->
+        <section id="metrics">
+            <h2>Model Metrics</h2>
+            <p class="metrics">Classification Metrics</p>
+            <h4 class="metrics" style="font-size: 20px;">Before and After Hyperparameter Tuning</h4>
+            <div class="table-style">
+                
+                <img src="img/tuning.png" width="700px">
+            </div>
+            
+        </section>
+        <section id="conclusion">
+            <h2>Conclusion</h2>
+            <p>The results of the air quality classification task demonstrate the effectiveness of various machine learning models in predicting the target variable with high accuracy. A comparative analysis of the models showed the following:</p>
+            
+            <ul>
+                <li><strong>Random Forest:</strong> This model achieved the highest performance with an accuracy of 95.8%, precision of 99%, recall of 99%, and an F1-score of 99%. The ensemble nature of the Random Forest likely contributed to its robustness and ability to handle non-linear relationships effectively.</li>
+                <li><strong>Logistic Regression:</strong> This model performed well, achieving an accuracy of 94%, but it was slightly outperformed by the Random Forest. While it is simpler and faster, it may not capture complex patterns as effectively.</li>
+                <li><strong>Support Vector Machine (SVM):</strong> The SVM model also delivered strong performance with an accuracy of 94%, demonstrating its capability in handling the classification problem with a non-linear kernel.</li>
+            </ul>
+        
+        
+            <h3>Key Observations:</h3>
+            <ul>
+                <li>The <strong>Random Forest</strong> model outperformed others due to its ability to combine predictions from multiple decision trees, reducing overfitting and improving generalization.</li>
+                <li>The performance difference between <strong>Logistic Regression</strong>  and <strong>SVM</strong>  was minimal, showing both are competitive for this dataset.</li>
+            
+            </ul>
+        
+            <h3>Future Directions:</h3>
+            <p>To further improve model performance and robustness, the following steps can be explored:</p>
+            <ul>
+                <li>Incorporating additional features or external datasets, such as weather conditions or traffic data, to capture more variability.</li>
+                <li>Applying advanced hyperparameter tuning techniques, such as Bayesian optimization, for fine-grained model optimization.</li>
+                <li>Testing other ensemble methods, such as Gradient Boosting or XGBoost, which may yield even better results.</li>
+            </ul>
+        
+            <p>In conclusion, the Random Forest model demonstrated superior performance for this task, making it the preferred choice for predicting air quality levels based on the given dataset.</p>
+        </section>
+        
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
